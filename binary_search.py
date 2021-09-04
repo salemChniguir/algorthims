@@ -1,8 +1,9 @@
 from random import randint
+from math import log2
 
 def binary_search (element, list):
     # if list is empty return None
-    print("List = {}, element = {}".format(list,element))
+    print("element to search = {}".format(element))
     if not len(list):
         return None
     low = 0
@@ -21,5 +22,7 @@ def binary_search (element, list):
     return None
 
 if __name__ == "__main__":
-    l = [randint(1,100) for i in range(100)]
-    print(binary_search(randint(1,100),sorted(l)))
+    random_size = randint(1,1000000)
+    print("Max number of steps = {}".format(log2(random_size)))
+    l = [randint(1,random_size) for i in range(random_size)]
+    print(binary_search(randint(1,random_size),sorted(l)))
